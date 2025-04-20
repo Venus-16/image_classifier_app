@@ -24,7 +24,7 @@ uploaded_file = st.file_uploader("Upload an image....", type=["jpg", "jpeg", "pn
 
 if uploaded_file is not None:
     # Display image
-    img = Image.open(uploaded_file)
+    img = Image.open(uploaded_file).convert('RGB')
     st.image(img, caption="Uploaded Image", use_container_width=True)
     
     # Preprocess the image
