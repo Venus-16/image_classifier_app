@@ -6,7 +6,7 @@ Created on Sun Apr 20 13:52:08 2025
 """
 
 import streamlit as st
-from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2, decode_predictions, preprocess_input
+from tensorflow.keras.applications.mobilenet_v2 import decode_predictions, preprocess_input
 from tensorflow.keras.preprocessing import image
 import numpy as np
 from PIL import Image
@@ -25,7 +25,7 @@ uploaded_file = st.file_uploader("Upload an image....", type=["jpg", "jpeg", "pn
 if uploaded_file is not None:
     # Display image
     img = Image.open(uploaded_file)
-    st.image(img, caption="Uploaded Image", use_column_width=True)
+    st.image(img, caption="Uploaded Image", use_container_width=True)
     
     # Preprocess the image
     img = img.resize((224, 224))
